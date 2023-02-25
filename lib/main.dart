@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/pages/home.dart';
+import 'package:todo_app/pages/page1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +25,11 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.orange,
       ),
-      home: const MyHomePage(),
       initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHomePage(),
+        '/page1': (context) => const Page1(),
+      },
     );
   }
 }
