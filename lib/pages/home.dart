@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/widgets/navigation_drawer.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -28,39 +29,13 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: const Text("Home"),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: const EdgeInsets.all(0),
-          children: <Widget>[
-            const DrawerHeader(
-                decoration: BoxDecoration(color: Color(0xff764abc)),
-                child: Text("Draw Header")),
-            ListTile(
-              leading: const Icon(Icons
-                  .home), // Leading will display something before the title
-              title: const Text("Home"),
-              onTap: () {
-                Navigator.pop(
-                    context); // This will close the drawer after user taps on page
-
-                if (ModalRoute.of(context)?.settings.name == '/') return;
-
-                Navigator.pushNamed(context, '/');
-              },
-            )
-          ],
-        ),
-      ),
+      drawer: const NavDrawer(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
+          children: const <Widget>[],
         ),
       ),
       floatingActionButton: FloatingActionButton(
